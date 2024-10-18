@@ -34,6 +34,7 @@ EOT
 cat > "$tmpdir/tag_msg" <<EOT
 Tagged using git-dsc-commit.
 EOT
+rm -rf "$extracted_dir/.pc"
 GIT_WORK_TREE="$extracted_dir" git add -fA
 if [ "`GIT_WORK_TREE="$extracted_dir" git status --porcelain`" = "" ]; then
 	echo "No changes to import." >&2
